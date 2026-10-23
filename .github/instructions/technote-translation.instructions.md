@@ -73,6 +73,8 @@ monospace font for code instead of colours, `code.colors` can stay empty.
   `![caption](fig-NN)` placed where the image sits.
   - `layout/fig-NN.json` stores `source`, `page`, `width_pt` (the placed width, reused in the rebuild) and
     `localize`, plus one `items[]` entry per OCR line with its `box`.
+  - Overlapping images on one page (e.g. a shadow layer under a screenshot) are merged into one figure,
+    rasterised from the page region at the highest native resolution among them (max 300 dpi).
 - Vector diagrams (drawn with PDF paths, not images) are **not** extracted. `inspect` lists pages with many
   drawings. If they contain text, ask the user: either rasterise the region with `page.get_pixmap(clip=…)` into a
   new figure, or leave it.

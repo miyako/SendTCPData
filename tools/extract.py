@@ -52,10 +52,23 @@ def line_items(page):
                 continue
             items.append({"kind": "line", "x": round(x0), "y0": y0, "y1": y1, "x1": x1,
                           "spans": spans, "text": "".join(s["text"] for s in spans)})
+    # Overlapping images (e.g. a drop shadow under a screenshot) become one figure,
+    # rasterised from the page region at the highest native resolution among them.
+    groups = []
     for info in page.get_image_info(xrefs=True):
-        x0, y0, x1, y1 = info["bbox"]
-        items.append({"kind": "image", "y0": y0, "y1": y1, "xref": info["xref"],
-                      "width_pt": x1 - x0})
+        rect = pymupdf.Rect(info["bbox"])
+        dpi = 72 * info["width"] / max(rect.width, 1)
+        for g in groups:
+            if g["rect"].intersects(rect):
+                g["rect"] |= rect; g["dpi"] = max(g["dpi"], dpi); g["n"] += 1
+                break
+        else:
+            groups.append({"rect": rect, "dpi": dpi, "n": 1, "xref": info["xref"]})
+    for g in groups:
+        r = g["rect"]
+        items.append({"kind": "image", "y0": r.y0, "y1": r.y1, "xref": g["xref"],
+                      "width_pt": r.width,
+                      "clip": (tuple(r), min(round(g["dpi"]), 300)) if g["n"] > 1 else None})
     items.sort(key=lambda it: (it["y0"], it.get("x", 0)))
     return items
 
@@ -183,7 +196,8 @@ def extract_body(doc):
         for it in line_items(doc[pno]):
             if it["kind"] == "image":
                 flush_all()
-                figures.append({"page": pno + 1, "xref": it["xref"], "width_pt": it["width_pt"]})
+                figures.append({"page": pno + 1, "xref": it["xref"], "width_pt": it["width_pt"],
+                                "clip": it["clip"]})
                 out.append(f"![](fig-{len(figures):02d})\n")
                 prev = None
                 continue
@@ -295,10 +309,14 @@ def extract_figures(doc, figures, force):
         name = f"fig-{n:02d}"
         png = figdir / f"{name}.png"
         if force or not png.exists():
-            pix = pymupdf.Pixmap(doc, fig["xref"])
-            smask = doc.xref_get_key(fig["xref"], "SMask")
-            if smask[0] == "xref":
-                pix = pymupdf.Pixmap(pix, pymupdf.Pixmap(doc, int(smask[1].split()[0])))
+            if fig["clip"]:
+                rect, dpi = fig["clip"]
+                pix = doc[fig["page"] - 1].get_pixmap(clip=pymupdf.Rect(rect), dpi=dpi, alpha=False)
+            else:
+                pix = pymupdf.Pixmap(doc, fig["xref"])
+                smask = doc.xref_get_key(fig["xref"], "SMask")
+                if smask[0] == "xref":
+                    pix = pymupdf.Pixmap(pix, pymupdf.Pixmap(doc, int(smask[1].split()[0])))
             pix.save(png)
             print(f"wrote: {png.relative_to(ROOT)}")
         layout_path = figdir / "layout" / f"{name}.json"

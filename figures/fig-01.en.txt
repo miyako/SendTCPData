@@ -1,0 +1,10 @@
+constructor
+connect
+disconnect
+sendPacket
+getInfo
+onConnection
+onShutdown
+onData
+onError
+onTerminate
