@@ -1,6 +1,6 @@
 Case of 
 	: (FORM Event:C1606.code=On Clicked:K2:4)
-		var $doc : Text:=Select document:C905(""; ".txt"; "Choose the file you want to send: "; Allow alias files:K24:10)
+		var $doc : Text:=Select document:C905(Folder(fk resources folder).platformPath; ".txt"; Localized string("Sender_ChooseFilePrompt"); Allow alias files:K24:10)
 		
 		If (ok=1)
 			var $file : 4D:C1709.File:=File:C1566(Document; fk platform path:K87:2)
