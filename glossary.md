@@ -32,11 +32,33 @@ Full-width `（）` and `：` in prose. First occurrence of a technical term: �
 | query | クエリ | |
 | formula | フォーミュラ | |
 | component | コンポーネント | |
+| property | プロパティ | |
+| class constructor | クラスコンストラクター | |
+| BLOB / Blob | BLOB | Type name in code stays `Blob` |
+| callback | コールバック | First use: コールバック（callback） |
+| event handler | イベントハンドラー | |
+| folder | フォルダー | |
+| server | サーバー | |
 
 ## Document-specific terms
 
 | English | 日本語 | Notes |
 |---|---|---|
+| TCP data acquisition | TCPによるデータ取得 | Title |
+| event logging | イベントログ | |
+| connection (TCP) | 接続 / TCP接続 | |
+| connection lifecycle | 接続のライフサイクル | |
+| asynchronous / synchronous | 非同期 / 同期 | First use: 非同期（asynchronous） |
+| non-blocking | ブロッキングしない | First use with（non-blocking） |
+| event-driven | イベント駆動型 | |
+| packet | パケット | |
+| fragmented data | 断片化されたデータ | |
+| Methods: (class section heading) | 関数： | They are class functions |
+| sender / receiver window | 送信側（Sender）/ 受信側（Receiver）のウィンドウ | Window titles in the demo |
+| progress bar | プログレスバー | |
+| Technical Services Engineer | テクニカルサービスエンジニア | |
+| Technical Note | テクニカルノート | No space before the number |
+| class / method names, UI labels, alert strings | Kept in English | `TCPConnection`, `onData`, "Connection established"; UI labels follow the demo (revisit in Phase 5) |
 
 ## Proper nouns in examples
 

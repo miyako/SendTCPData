@@ -79,7 +79,10 @@ pre {
   margin: 0.4em 0 0.9em;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
-  break-inside: avoid;
+  /* long listings may span pages (as in the source); blocks under 8 lines never split */
+  break-inside: auto;
+  orphans: 4;
+  widows: 4;
 }
 code { font-family: inherit; }
 
