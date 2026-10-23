@@ -29,7 +29,7 @@ Case of
 					Form:C1466.transferInformation.currentPacket:=1
 					SET TIMER:C645(Form:C1466.interval)
 				Else 
-					ALERT:C41("please connect first")
+					ALERT:C41(Localized string("AlertConnectFirst"))
 					SET TIMER:C645(0)
 				End if 
 				

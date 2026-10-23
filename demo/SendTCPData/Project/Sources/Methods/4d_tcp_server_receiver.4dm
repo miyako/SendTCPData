@@ -10,13 +10,13 @@ var $err : Integer
 var $p : Integer:=Progress New
 var $packet_js : Object
 Repeat 
-	Progress SET TITLE($p; "Waiting for connection ..."; -1)
+	Progress SET TITLE($p; Localized string("Progress_WaitingForConnection"); -1)
 	
 	$err:=TCP_Listen("localhost"; 0; 19820; 0; $tcpID)
 	
 	$err:=TCP_State($tcpID; $status)
 	
-	Progress SET TITLE($p; "Waiting for packets ..."; -1)
+	Progress SET TITLE($p; Localized string("Progress_WaitingForPackets"); -1)
 	
 	If ($status=8)
 		DELAY PROCESS:C323(Current process:C322(); 2)
@@ -30,19 +30,19 @@ Repeat
 				
 				Case of 
 					: ($packet_js.info.kind="start")
-						Progress SET TITLE($p; "Start Receiving ..."; -1)
+						Progress SET TITLE($p; Localized string("Progress_StartReceiving"); -1)
 						$receivedPackets:=New collection:C1472()
 						
 						
 					: ($packet_js.info.kind="inProgress")
 						$receivedPackets.combine($packet_js.data)
 						
-						Progress SET TITLE($p; "Receiving packets ..."; -1)
+						Progress SET TITLE($p; Localized string("Progress_ReceivingPackets"); -1)
 						Progress SET PROGRESS($p; $packet_js.info.current/$packet_js.info.total; String:C10($packet_js.info.current)+" /"+String:C10($packet_js.info.total))
 						
 					: ($packet_js.info.kind="end")
 						Progress SET PROGRESS($p; -1)
-						Progress SET TITLE($p; "End Receiving ..."; -1)
+						Progress SET TITLE($p; Localized string("Progress_EndReceiving"); -1)
 						
 						var $form : Object:=New object:C1471()
 						

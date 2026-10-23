@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file datatype="plaintext" original="messages" source-language="en" target-language="en">
+    <body>
+      <trans-unit id="Progress_WaitingForConnection" resname="Progress_WaitingForConnection">
+        <source>Waiting for connection ...</source>
+        <target>Waiting for connection ...</target>
+      </trans-unit>
+      <trans-unit id="Progress_WaitingForPackets" resname="Progress_WaitingForPackets">
+        <source>Waiting for packets ...</source>
+        <target>Waiting for packets ...</target>
+      </trans-unit>
+      <trans-unit id="Progress_StartReceiving" resname="Progress_StartReceiving">
+        <source>Start Receiving ...</source>
+        <target>Start Receiving ...</target>
+      </trans-unit>
+      <trans-unit id="Progress_ReceivingPackets" resname="Progress_ReceivingPackets">
+        <source>Receiving packets ...</source>
+        <target>Receiving packets ...</target>
+      </trans-unit>
+      <trans-unit id="Progress_EndReceiving" resname="Progress_EndReceiving">
+        <source>End Receiving ...</source>
+        <target>End Receiving ...</target>
+      </trans-unit>
+      <trans-unit id="Sender_ChooseFilePrompt" resname="Sender_ChooseFilePrompt">
+        <source>Choose the file you want to send: </source>
+        <target>Choose the file you want to send: </target>
+      </trans-unit>
+      <trans-unit id="AlertConnectFirst" resname="AlertConnectFirst">
+        <source>please connect first</source>
+        <target>please connect first</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

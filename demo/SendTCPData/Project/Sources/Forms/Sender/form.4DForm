@@ -13,7 +13,7 @@
 		"onLoad",
 		"onTimer"
 	],
-	"windowTitle": "Sender",
+	"windowTitle": ":xliff:Sender_WindowTitle",
 	"destination": "detailScreen",
 	"pages": [
 		{
@@ -34,7 +34,7 @@
 				},
 				"Text": {
 					"type": "text",
-					"text": "Sender",
+					"text": ":xliff:Sender_WindowTitle",
 					"top": 8,
 					"left": 0,
 					"width": 580,
@@ -53,7 +53,7 @@
 					"sizingY": "move",
 					"action": "",
 					"shortcutKey": "[Enter]",
-					"text": "Close",
+					"text": ":xliff:CommonClose",
 					"defaultButton": false,
 					"events": [
 						"onClick"
@@ -84,7 +84,7 @@
 					"sizingX": "move",
 					"sizingY": "move",
 					"action": "",
-					"text": "Choose File",
+					"text": ":xliff:Sender_BtnChooseFile",
 					"defaultButton": false,
 					"events": [
 						"onClick"
@@ -94,7 +94,7 @@
 				},
 				"Text1": {
 					"type": "text",
-					"text": "File:",
+					"text": ":xliff:Sender_LabelFile",
 					"top": 82,
 					"left": 19,
 					"width": 99,
@@ -111,7 +111,7 @@
 					"sizingX": "move",
 					"sizingY": "move",
 					"action": "",
-					"text": "Connect",
+					"text": ":xliff:Sender_BtnConnect",
 					"defaultButton": false,
 					"events": [
 						"onClick"
@@ -125,7 +125,7 @@
 					"top": 82,
 					"width": 118,
 					"height": 16,
-					"dataSource": "\"(\"+String:C10(Form:C1466.fileToSend.size)+\" bytes)\"",
+					"dataSource": "Replace string(Localized string(\"Sender_FileSize\"); \"{n}\"; String:C10(Form:C1466.fileToSend.size))",
 					"fontWeight": "normal",
 					"fill": "transparent",
 					"enterable": false,
@@ -161,7 +161,7 @@
 					"sizingX": "move",
 					"sizingY": "move",
 					"action": "",
-					"text": "Send",
+					"text": ":xliff:Sender_BtnSend",
 					"defaultButton": false,
 					"events": [
 						"onClick"

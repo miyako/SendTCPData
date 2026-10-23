@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file datatype="plaintext" original="messages" source-language="en" target-language="ja">
+    <body>
+      <trans-unit id="Progress_WaitingForConnection" resname="Progress_WaitingForConnection">
+        <source>Waiting for connection ...</source>
+        <target>接続を待機しています…</target>
+      </trans-unit>
+      <trans-unit id="Progress_WaitingForPackets" resname="Progress_WaitingForPackets">
+        <source>Waiting for packets ...</source>
+        <target>パケットを待機しています…</target>
+      </trans-unit>
+      <trans-unit id="Progress_StartReceiving" resname="Progress_StartReceiving">
+        <source>Start Receiving ...</source>
+        <target>受信を開始しています…</target>
+      </trans-unit>
+      <trans-unit id="Progress_ReceivingPackets" resname="Progress_ReceivingPackets">
+        <source>Receiving packets ...</source>
+        <target>パケットを受信しています…</target>
+      </trans-unit>
+      <trans-unit id="Progress_EndReceiving" resname="Progress_EndReceiving">
+        <source>End Receiving ...</source>
+        <target>受信が完了しました</target>
+      </trans-unit>
+      <trans-unit id="Sender_ChooseFilePrompt" resname="Sender_ChooseFilePrompt">
+        <source>Choose the file you want to send: </source>
+        <target>送信するファイルを選択してください：</target>
+      </trans-unit>
+      <trans-unit id="AlertConnectFirst" resname="AlertConnectFirst">
+        <source>please connect first</source>
+        <target>先に接続してください。</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -54,11 +54,14 @@ Full-width `（）` and `：` in prose. First occurrence of a technical term: �
 | packet | パケット | |
 | fragmented data | 断片化されたデータ | |
 | Methods: (class section heading) | 関数： | They are class functions |
-| sender / receiver window | 送信側（Sender）/ 受信側（Receiver）のウィンドウ | Window titles in the demo |
+| sender / receiver window | 「送信側」/「受信側」ウィンドウ | Window titles of the demo (XLIFF `Sender_WindowTitle`, `Receiver_WindowTitle`) |
+| Run Demo (menu item) | デモを実行 | In the File menu (ファイル) |
+| connect / choose file / send buttons | 「接続」「ファイルを選択」「送信」 | Demo button labels (`demo/*/Resources/ja.lproj/SenderJA.xlf`) |
+| End Receiving | 受信が完了しました | Progress title (`messagesJA.xlf`) |
 | progress bar | プログレスバー | |
 | Technical Services Engineer | テクニカルサービスエンジニア | |
 | Technical Note | テクニカルノート | No space before the number |
-| class / method names, UI labels, alert strings | Kept in English | `TCPConnection`, `onData`, "Connection established"; UI labels follow the demo (revisit in Phase 5) |
+| class / method names, TCPConnection alert strings | Kept in English | `TCPConnection`, `onData`, "Connection established" (they match the printed code). Other demo UI labels are localised: quote the Japanese label in 「」, matching the XLIFF |
 
 ## Proper nouns in examples
 
