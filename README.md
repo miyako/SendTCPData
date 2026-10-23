@@ -19,7 +19,8 @@ This is the Japanese edition of a technical note on asynchronous TCP client conn
 - 4D version: 20 R8 (build 100353) or later, as stated in the note.
 - Open `demo/SendTCPData/Project/SendTCPData.4DProject`.
 - Languages: English only. The demo UI is not localised.
-- On startup the receiver (a TCP server using 4D Internet Commands) starts in a worker and the Sender window opens. The menu item **File > Run Demo** opens it again.
+- On startup the receiver (a TCP server using 4D Internet Commands) starts in a worker and the Sender window opens as a non-modal window. The menu item **File > Run Demo** brings it to the front, or opens it again if it was closed.
+- The receiver's progress display uses the [4D Progress](https://github.com/4d/4D-Progress) component, declared in `Project/Sources/dependencies.json`; 4D downloads it when the project opens.
 
 ## Differences from the original
 
