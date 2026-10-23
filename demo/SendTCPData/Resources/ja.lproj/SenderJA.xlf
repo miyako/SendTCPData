@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file datatype="plaintext" original="Sender" source-language="en" target-language="ja">
+    <body>
+      <trans-unit id="Sender_WindowTitle" resname="Sender_WindowTitle">
+        <source>Sender</source>
+        <target>送信側</target>
+      </trans-unit>
+      <trans-unit id="Sender_BtnConnect" resname="Sender_BtnConnect">
+        <source>Connect</source>
+        <target>接続</target>
+      </trans-unit>
+      <trans-unit id="Sender_BtnChooseFile" resname="Sender_BtnChooseFile">
+        <source>Choose File</source>
+        <target>ファイルを選択</target>
+      </trans-unit>
+      <trans-unit id="Sender_BtnSend" resname="Sender_BtnSend">
+        <source>Send</source>
+        <target>送信</target>
+      </trans-unit>
+      <trans-unit id="Sender_LabelFile" resname="Sender_LabelFile">
+        <source>File:</source>
+        <target>ファイル：</target>
+      </trans-unit>
+      <trans-unit id="Sender_FileSize" resname="Sender_FileSize">
+        <source>({n} bytes)</source>
+        <target>（{n}バイト）</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,7 +1,7 @@
 //%attributes = {}
 #DECLARE($params : Object)
 
-var $title : Text:="Sender"
+var $title : Text:=Localized string("Sender_WindowTitle")
 var $window : Integer
 
 If (Count parameters=0)
